@@ -10,11 +10,11 @@ Built as a learning project while exploring Python, software development, and cy
 
 ### Main Interface
 
-![CyberOps Main Interface](screenshot1.png)
+![CyberOps Main Interface](Screenshot1.png)
 
 ### Commands & Features
 
-![CyberOps Commands](screenshot2.png)
+![CyberOps Commands](Screenshot2.png)
 
 ---
 
