@@ -1,73 +1,82 @@
-# 🛡️ CyberOps v1.0
+# 🛡️ CyberOps v2.0
 
-A modern Python-based terminal toolkit featuring a hacker-style interface and useful system utilities.
+CyberOps is an open-source Python command-line toolkit built for system monitoring, process inspection, network analysis, password utilities, and file integrity verification.
 
-![Python](https://img.shields.io/badge/Python-3.x-blue)
-![Version](https://img.shields.io/badge/Version-v1.0-green)
-![Status](https://img.shields.io/badge/Status-Active-success)
+Built as a learning project while exploring Python, software development, and cybersecurity concepts.
 
 ---
 
-## ✨ Features
+## 📸 Screenshots
 
-### 🖥️ System Information
+### Main Interface
 
-View detailed information about your machine.
+![CyberOps Main Interface](screenshot1.png)
 
+### Commands & Features
+
+![CyberOps Commands](screenshot2.png)
+
+---
+
+## 🚀 Features
+
+### 💻 System Information
+
+* Hostname
 * Operating System
-* Processor Information
+* Processor Details
 * CPU Usage
 * RAM Usage
-* Hostname
 
 ### 🌐 Network Information
 
-Display basic network details.
+* Hostname Detection
+* IP Address Lookup
 
-* Hostname
-* Local IP Address
+### ⚙️ Process Viewer
 
-### ⚙️ Running Processes
+* View active user processes
+* Process ID (PID) display
+* RAM usage information
 
-View currently running system processes.
+### 🔒 SHA256 File Hashing
 
-* Process Names
-* Process IDs (PID)
+* Generate SHA256 hashes
+* Verify file integrity
 
-### 🔒 SHA256 File Hash Generator
+### 🔐 Password Generator
 
-Generate SHA256 hashes for file verification and integrity checking.
+* Generate secure passwords
+* Custom password length
+
+### ✅ Password Strength Checker
+
+* Analyze password strength
+* Weak / Medium / Strong rating
+
+### 📊 System Monitor
+
+* CPU Usage Monitoring
+* RAM Usage Monitoring
+* Disk Usage Monitoring
+
+### 🎨 Rich Terminal UI
+
+* Colored output
+* Rich tables
+* Clean command interface
 
 ---
 
-## 📂 Project Structure
-
-```text
-CyberOps/
-│
-├── main.py
-│
-├── requirements.txt
-│
-├── README.md
-│
-└── modules/
-    ├── __init__.py
-    ├── sysinfo.py
-    ├── network.py
-    ├── processes.py
-    └── hashing.py
-```
-
-## 🚀 Installation
+## 📦 Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/CyberOps.git
+git clone https://github.com/ansh385/CyberOps.git
 ```
 
-Navigate to the project directory:
+Move into the project folder:
 
 ```bash
 cd CyberOps
@@ -79,10 +88,6 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
----
-
-## ▶️ Usage
-
 Run CyberOps:
 
 ```bash
@@ -91,54 +96,73 @@ python main.py
 
 ---
 
-## 📜 Available Commands
+## 📖 Available Commands
 
 | Command   | Description                 |
 | --------- | --------------------------- |
-| help      | Show available commands     |
+| help      | Show all commands           |
 | sysinfo   | Display system information  |
 | network   | Display network information |
-| processes | View running processes      |
+| processes | View active processes       |
 | hash      | Generate SHA256 hash        |
-| clear     | Clear terminal screen       |
+| password  | Generate strong password    |
+| checkpass | Check password strength     |
+| monitor   | System monitor              |
+| clear     | Clear screen                |
 | exit      | Exit CyberOps               |
 
 ---
 
-## 🧰 Technologies Used
+## 🛠️ Built With
 
 * Python
 * Rich
-* PyFiglet
 * Psutil
+* PyFiglet
 
 ---
 
-## 🔮 Roadmap
+## 📂 Project Structure
 
-### v1.1
-
-* Live System Monitor
-* Real-time CPU/RAM Usage
-
-### v1.2
-
-* Advanced Network Tools
-* Improved Process Viewer
-
-### v2.0
-
-* Interactive Dashboard
-* Enhanced Terminal Experience
-
----
-
-## 👨‍💻 Author
-
-**Ansh Gajjar**
-
-Computer Engineering Student
+```text
+CyberOps
+│
+├── main.py
+├── requirements.txt
+├── README.md
+│
+└── modules
+    ├── sysinfo.py
+    ├── network.py
+    ├── processes.py
+    ├── hashing.py
+    ├── password_generator.py
+    ├── password_checker.py
+    └── monitor.py
+```
 
 ---
 
-⭐ If you find this project useful, consider giving it a star.
+## 🤝 Contributing
+
+Contributions, suggestions, and feature ideas are welcome.
+
+Feel free to fork the project and submit improvements.
+
+---
+
+## ⭐ Support
+
+If you find CyberOps useful, consider giving the repository a star.
+
+---
+
+## 📌 Project Status
+
+CyberOps v2.0 is the final planned feature release.
+
+The project will remain available as an open-source learning project and may receive occasional maintenance updates.
+
+---
+
+Built with ❤️ by The Coding Yatra

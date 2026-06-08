@@ -10,7 +10,21 @@ def hash_file(filepath):
 
     try:
 
-        if not os.path.exists(filepath):
+        filepath = filepath.strip()
+
+        filepath = filepath.strip('"')
+
+        filepath = filepath.strip("'")
+
+        if not filepath:
+
+            console.print(
+                "[red]Please enter a file path.[/red]"
+            )
+
+            return
+
+        if not os.path.isfile(filepath):
 
             console.print(
                 "[red]File not found.[/red]"
@@ -33,13 +47,20 @@ def hash_file(filepath):
 
         console.print(
             Panel(
-                f"[green]{sha256.hexdigest()}[/green]",
-                title=f"SHA256 : {os.path.basename(filepath)}"
+                f"[bold green]{sha256.hexdigest()}[/bold green]",
+                title=f"SHA256 : {os.path.basename(filepath)}",
+                border_style="green"
             )
+        )
+
+    except PermissionError:
+
+        console.print(
+            "[red]Permission denied.[/red]"
         )
 
     except Exception as e:
 
         console.print(
-            f"[red]{e}[/red]"
+            f"[red]Error: {e}[/red]"
         )

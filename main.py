@@ -1,5 +1,6 @@
 from rich.console import Console
 from rich.panel import Panel
+from rich.table import Table
 from pyfiglet import Figlet
 import shutil
 
@@ -7,6 +8,9 @@ from modules.sysinfo import show_sysinfo
 from modules.network import show_network
 from modules.processes import show_processes
 from modules.hashing import hash_file
+from modules.password_generator import generate_password
+from modules.password_checker import check_password_strength
+from modules.monitor import show_monitor
 
 console = Console()
 
@@ -44,6 +48,74 @@ def show_banner():
     )
 
 
+def show_help():
+
+    table = Table(title="CYBEROPS COMMANDS")
+
+    table.add_column(
+        "Command",
+        style="cyan",
+        no_wrap=True
+    )
+
+    table.add_column(
+        "Description",
+        style="green"
+    )
+
+    table.add_row(
+        "help",
+        "Show all commands"
+    )
+
+    table.add_row(
+        "sysinfo",
+        "System information"
+    )
+
+    table.add_row(
+        "network",
+        "Network information"
+    )
+
+    table.add_row(
+        "processes",
+        "Running processes"
+    )
+
+    table.add_row(
+        "hash",
+        "Generate SHA256 hash"
+    )
+
+    table.add_row(
+        "password",
+        "Generate strong password"
+    )
+
+    table.add_row(
+        "checkpass",
+        "Check password strength"
+    )
+
+    table.add_row(
+        "monitor",
+        "System monitor"
+    )
+
+    table.add_row(
+        "clear",
+        "Clear screen"
+    )
+
+    table.add_row(
+        "exit",
+        "Exit CyberOps"
+    )
+
+    console.print(table)
+
+
 show_banner()
 
 while True:
@@ -56,37 +128,7 @@ while True:
 
     if cmd == "help":
 
-        console.print(
-            "\n[bold cyan]Available Commands[/bold cyan]\n"
-        )
-
-        console.print(
-            "[green]help[/green]       - Show commands"
-        )
-
-        console.print(
-            "[green]sysinfo[/green]    - System information"
-        )
-
-        console.print(
-            "[green]network[/green]    - Network information"
-        )
-
-        console.print(
-            "[green]processes[/green]  - Running processes"
-        )
-
-        console.print(
-            "[green]hash[/green]       - Generate file SHA256 hash"
-        )
-
-        console.print(
-            "[green]clear[/green]      - Clear screen"
-        )
-
-        console.print(
-            "[green]exit[/green]       - Exit CyberOps"
-        )
+        show_help()
 
     elif cmd == "sysinfo":
 
@@ -107,6 +149,44 @@ while True:
         ).strip()
 
         hash_file(filepath)
+
+    elif cmd == "password":
+
+        try:
+
+            length = int(
+                input(
+                    "Password Length: "
+                )
+            )
+
+            password = generate_password(
+                length
+            )
+
+            console.print(
+                f"\n[bold green]Generated Password:[/bold green] {password}"
+            )
+
+        except ValueError:
+
+            console.print(
+                "[bold red]Please enter a valid number[/bold red]"
+            )
+
+    elif cmd == "checkpass":
+
+        password = input(
+            "Enter Password: "
+        )
+
+        check_password_strength(
+            password
+        )
+
+    elif cmd == "monitor":
+
+        show_monitor()
 
     elif cmd == "clear":
 
